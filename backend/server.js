@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const productRoutes = require('./src/routes/products');
+const productRoutes = require("./src/routes/products");
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/products', productRoutes);
+productRoutes(app);
 
 // Page d'accueil pour l'API
 app.get('/', (req, res) => {
